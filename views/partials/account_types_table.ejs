@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre de cuenta</th>
+      <th scope="col">Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% account_types.forEach( (account_type) => { %>
+    <tr>
+      <th scope="row"><%= account_type.id %></th>
+      <td><%= account_type.name %></td>
+      <td><%= account_type.description %></td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
