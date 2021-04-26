@@ -60,11 +60,16 @@ app.post("/clients", async (req, res) => {
     //Creamos un registro en la tabla account_types
     let results = await clients.create({ first_name, last_name, email, phone });
     //Enviamos un respuesta satisfactoria
-    res.send("Se ha agregado un cliente");
+    res.redirect("/clients");
   } catch (error) {
     console.log(error);
     res.status(400).send("No se ha podido agregar el cliente");
   }
+});
+
+//EDIT
+app.get("/clients/edit", (req, res) => {
+  res.render("/clients/edit");
 });
 
 const PORT = process.env.PORT || 8080;
