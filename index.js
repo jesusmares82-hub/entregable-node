@@ -68,8 +68,13 @@ app.post("/clients", async (req, res) => {
 });
 
 //EDIT
-app.get("/clients/edit", (req, res) => {
-  res.render("/clients/edit");
+// GET /edit/5
+app.get("/edit/:id", async (req, res) => {
+  const id = req.params.id;
+  let results = await clients.findByPk(req.params.id, {
+    raw: true,
+  });
+  res.render("edit", { edit: results });
 });
 
 const PORT = process.env.PORT || 8080;
