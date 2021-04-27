@@ -26,8 +26,9 @@ app.get("/clients", async (req, res) => {
   res.render("clients", { clients: results });
 });
 
-app.get("/accounts", (req, res) => {
-  res.render("accounts");
+app.get("/accounts", async (req, res) => {
+  let results = await accounts.findAll({ raw: true });
+  res.render("accounts", { account_types: results });
 });
 
 //CREATE
@@ -39,7 +40,7 @@ app.post("/account_types", async (req, res) => {
     //Creamos un registro en la tabla account_types
     let results = await account_types.create({ name, description });
     //Enviamos un respuesta satisfactoria
-    res.send("Se ha agregado un tipo cuenta");
+    res.redirect("/account_types");
   } catch (error) {
     console.log(error);
     res.status(400).send("No se ha podido agregar el tipo de cuenta");
@@ -69,12 +70,12 @@ app.post("/clients", async (req, res) => {
 
 //EDIT
 // GET /edit/5
-app.get("/edit/:id", async (req, res) => {
+app.get("/partials/clients/edit/:id", async (req, res) => {
   const id = req.params.id;
   let results = await clients.findByPk(req.params.id, {
     raw: true,
   });
-  res.render("edit", { edit: results });
+  res.render("/partials/clients/edit", { edit: results });
 });
 
 const PORT = process.env.PORT || 8080;

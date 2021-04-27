@@ -1,0 +1,32 @@
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre del cliente</th>
+        <th scope="col">Email</th>
+        <th scope="col">Teléfono</th>
+        <th scope="col">Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% clients.forEach( (client) => { %>
+      <tr>
+        <th scope="row"><%= client.id %></th>
+        <td><%= client.first_name %> <%= client.last_name %></td>
+        <td><%= client.email %></td>
+        <td><%= client.phone %></td>
+        <td>
+          <a href="#" type="button" class="btn btn-danger">Delete</a>
+          <a
+            href="/clients/edit/<%= client.id %>"
+            type="button"
+            class="btn btn-warning"
+            >Edit</a
+          >
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>

@@ -1,10 +1,8 @@
-<%- include("partials/header") -%>
-
-<h1>Update a record</h1>
-
-<form action="/edit/<%= clients.id %>" method="post">
+<h1>Editar Cliente:</h1>
+<%- include ('../header') %>
+<form action="/clients/edit/<%= clients.id %>" method="POST">
   <div class="form-horizontal">
-    <%- include("/editor") -%>
+    <%- include('/editor'); -%>
 
     <div class="form-group row">
       <label class="col-form-label col-sm-2"></label>
@@ -14,10 +12,8 @@
           value="Update"
           class="btn btn-default btn-warning"
         />
-        <a class="btn btn-outline-dark cancel" href="/clients">Cancel</a>
+        <a class="btn btn-outline-dark cancel" href="../clients">Cancel</a>
       </div>
     </div>
   </div>
 </form>
-
-<%- include("partials/footer") -%>
