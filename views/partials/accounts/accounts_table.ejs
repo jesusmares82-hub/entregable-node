@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Número de cuenta</th>
+      <th scope="col">Cliente</th>
+      <th scope="col">Saldo</th>
+      <th scope="col">Tipo de cuenta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% accounts.forEach( (account) => { %>
+    <tr>
+      <th scope="row"><%= account.id %></th>
+      <td><%= account.account_no %></td>
+      <td><%= account.client_id %></td>
+      <td><%= account.balance %></td>
+      <td><%= account.type%></td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>

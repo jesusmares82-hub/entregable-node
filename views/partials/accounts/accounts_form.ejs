@@ -1,0 +1,39 @@
+<form action="/accounts" method="POST">
+  <div class="mt-5 mb-3">
+    <label for="inputAccount" class="form-label">Account number:</label>
+    <input
+      type="number"
+      name="account_no"
+      class="form-control"
+      id="inputAccount"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="inputClient" class="form-label">Client:</label>
+    <select
+      type="number"
+      name="client_id"
+      class="form-control"
+      id="inputClient"
+    >
+      <% clients.forEach( (client) => { %>
+      <option value="<%= client.id%>">
+        <%= client.id%> <%= client.first_name%> <%= client.last_name%>
+      </option>
+      <% }) %>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="inputBalance" class="form-label">Balance:</label>
+    <input type="real" name="balance" class="form-control" id="inputBalance" />
+  </div>
+  <div class="mb-3">
+    <label for="inputType" class="form-label">Type:</label>
+    <select type="number" name="type" class="form-control" id="inputType">
+      <% account_types.forEach( (account_type) => { %>
+      <option value="<%= account_type.id%>"><%= account_type.id%> <%= account_type.name%></option>
+      <% }) %>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary mb-3">Add Client</button>
+</form>

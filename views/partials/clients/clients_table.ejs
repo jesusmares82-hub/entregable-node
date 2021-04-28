@@ -3,10 +3,10 @@
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Nombre del cliente</th>
+        <th scope="col">Name</th>
         <th scope="col">Email</th>
-        <th scope="col">Teléfono</th>
-        <th scope="col">Opciones</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Options</th>
       </tr>
     </thead>
     <tbody>
@@ -17,7 +17,12 @@
         <td><%= client.email %></td>
         <td><%= client.phone %></td>
         <td>
-          <a href="#" type="button" class="btn btn-danger">Delete</a>
+          <a
+            href="/clients/delete/<%= client.id %>"
+            type="button"
+            class="btn btn-danger"
+            >Delete</a
+          >
           <a
             href="/clients/edit/<%= client.id %>"
             type="button"
