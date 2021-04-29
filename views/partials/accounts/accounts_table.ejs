@@ -2,10 +2,11 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Número de cuenta</th>
-      <th scope="col">Cliente</th>
-      <th scope="col">Saldo</th>
-      <th scope="col">Tipo de cuenta</th>
+      <th scope="col">Account number</th>
+      <th scope="col">Client</th>
+      <th scope="col">Balance</th>
+      <th scope="col">Account type</th>
+      <th scope="col">Options</th>
     </tr>
   </thead>
   <tbody>
@@ -16,6 +17,20 @@
       <td><%= account.client_id %></td>
       <td><%= account.balance %></td>
       <td><%= account.type%></td>
+      <td>
+        <a
+          href="/accounts/delete/<%= account.id %>"
+          type="button"
+          class="btn btn-danger"
+          >Delete</a
+        >
+        <a
+          href="/accounts/edit/<%= account.id %>"
+          type="button"
+          class="btn btn-warning"
+          >Edit</a
+        >
+      </td>
     </tr>
     <% }) %>
   </tbody>

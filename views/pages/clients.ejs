@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('partials/header'); -%>
+  <%- include('../partials/header'); -%>
   <body>
-    <%- include('partials/navbar'); -%> <%- include('partials/messages'); -%>
+    <%- include('../partials/navbar'); -%> <%- include('../partials/messages');
+    -%>
     <div class="container mt-5">
       <h1>Clients</h1>
       <div class="accordion" id="accordionExample">
@@ -26,7 +27,7 @@
             data-bs-parent="#accordionExample"
           >
             <div class="accordion-body">
-              <%- include('partials/clients/clients_form'); -%>
+              <%- include('../partials/clients/clients_form'); -%>
             </div>
           </div>
         </div>
@@ -50,13 +51,13 @@
             data-bs-parent="#accordionExample"
           >
             <div class="accordion-body">
-              <%- include('partials/clients/clients_table'); -%>
+              <%- include('../partials/clients/clients_table'); -%>
             </div>
           </div>
         </div>
       </div>
 
-      <%-include('partials/footer');-%>
+      <%-include('../partials/footer');-%>
     </div>
   </body>
 </html>

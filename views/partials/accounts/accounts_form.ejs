@@ -31,9 +31,11 @@
     <label for="inputType" class="form-label">Type:</label>
     <select type="number" name="type" class="form-control" id="inputType">
       <% account_types.forEach( (account_type) => { %>
-      <option value="<%= account_type.id%>"><%= account_type.id%> <%= account_type.name%></option>
+      <option value="<%= account_type.id%>">
+        <%= account_type.id%> <%= account_type.name%>
+      </option>
       <% }) %>
     </select>
   </div>
-  <button type="submit" class="btn btn-primary mb-3">Add Client</button>
+  <button type="submit" class="btn btn-primary mb-3">Add Account</button>
 </form>

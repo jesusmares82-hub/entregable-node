@@ -1,9 +1,9 @@
 <div class="container mt-5">
-  <h1 class="mb-3">Editar Cliente:</h1>
-  <%- include ('partials/header') %>
+  <h1 class="mb-3">Edit Client:</h1>
+  <%- include ('../header') %>
   <form action="/clients/update/<%= clients.id %>" method="POST">
     <div class="form-horizontal mb-3">
-      <%- include ('partials/editor') %>
+      <%- include ('../editor') %>
 
       <div class="form-group row">
         <label class="col-form-label col-sm-2"></label>
